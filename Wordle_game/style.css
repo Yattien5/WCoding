@@ -1,0 +1,19 @@
+/* to add a note, ctrl +/ */
+input {
+    width: 80px;
+    height: 80px;
+    font-size: 3em; /* 1em = 16 px */
+    text-align: center;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.gray {
+    background-color: gray;
+}
