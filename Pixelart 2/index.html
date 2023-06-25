@@ -1,0 +1,226 @@
+<style>
+/*CSS area is for styles, fonts, and positions within a project*/
+body{
+    margin: 0; 
+}
+header{
+    background-color: dodgerblue;
+    height: 80px;
+}
+h1{
+   color:white;
+   text-align: center;
+}
+img{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.row {
+    display: flex;
+}
+.cell, #palette div {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+/* .black{
+    background-color: black;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.purple{
+    background-color: purple;
+}
+.yellow{
+    background-color: yellow;
+} */
+
+</style>
+
+<!--HTML area-->
+<header>
+    <h1>Pixel Art - WCoding Workshop 11 May 2023</h1>
+    <img src="wcoding-logo.svg" height="50">
+</header>
+
+<div id="grid">
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>    <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+</div>
+
+<h2> Choose a color:</h2>
+<div class="row" id="palette">
+    <div class="white" onclick="changeColor ('white')"></div>
+    <div class="black" onclick="changeColor ('black')"></div>
+    <div class="red" onclick="changeColor ('red')"></div>
+    <div class="blue" onclick="changeColor ('blue')"></div>
+    <div class="green" onclick="changeColor ('green')"></div>
+    <div class="yellow" onclick="changeColor ('yellow')"></div>
+    <div class="purple" onclick="changeColor ('purple')"></div>
+    <div class="orange" onclick="changeColor ('orange')"></div>
+    <div class="brown" onclick="changeColor ('brown')"></div>
+    <div class="pink" onclick="changeColor ('pink')"></div>
+<!-- ctrl+d will highlight all cell values! -->
+</div>
+
+<script>
+
+    // Javascript area
+    // console.log("Hello World!");
+    var selectedColor = "black"
+    var cells = document.querySelectorAll("#grid .cell");
+    // console.log(cells);
+
+// loop = code many times! using a for of
+
+for(let cell of cells) {
+    // console.log(cell);
+    cell.addEventListener("click", function(){
+        cell.style.backgroundColor = selectedColor;
+    });
+
+}
+
+    function changeColor(color) {
+        selectedColor = color;
+    }
+
+var colors = document.querySelectorAll("#palette div");
+// console.log(colors); .cell is targetting the class and cell!
+
+for (let color of colors) {
+    color.style.backgroundColor = color.className;
+}
+
+</script>
